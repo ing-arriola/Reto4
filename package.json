@@ -1,0 +1,15 @@
+{
+  "name": "clase30",
+  "version": "1.0.0",
+  "description": "proyectazo de ejemplo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jarriola",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0",
+    "require": "^2.4.20"
+  }
+}
