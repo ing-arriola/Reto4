@@ -8,7 +8,7 @@ request('http://www.google.com', function (error, response, body) {
 
 
 var request = require('request');
-/*
+
 request.get('https://swapi.co/api/starships/9/',(err,res,body)=>{
   //console.log(body);
   const json=JSON.parse(body)
