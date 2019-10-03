@@ -90,12 +90,6 @@ function listaPeliculas(nombrePersonaje){
 }
 listaPeliculas("4/")
 //Sexto
-//https://api.nasa.gov/neo/rest/v1/feed?start_date=2019-09-23&end_date=2019-09-30&api_key=RVCkZkHraOBKaQRYKCe0SNb9iiGH9ynSaRqYau2C
-
-// var arr = oldArr.map(function(obj){
-// var key = Object.keys(obj).sort()[1], rtn = {};
-// return rtn[key] = obj[key], rtn;
-// });
 */
 
 function asteroidePeligroso(){
@@ -105,26 +99,39 @@ function asteroidePeligroso(){
     //const json3=JSON.parse(json.near_earth_objects)
     //Getting array from JSON near_earth_objects
     objeto={}
-    var key
-    var longi=Object.keys(json.near_earth_objects).length
+    var key //variable para almacenar las claves de objeto JSON y desoues poder acceder a sus elementos
+    //Las claves son las fechas y los elementos son los asteroides peligrosos registrados en dicho dia
+    var longi=Object.keys(json.near_earth_objects).length//Cantidad de fechas detectadas
     for (var i = 0; i < longi; i++) {
       key=Object.keys(json.near_earth_objects).sort()[i]
       objeto[key]=json.near_earth_objects[key]
-      for (var j = 0; j < objeto[key].length; j++) {
+      for (var j = 0; j < objeto[key].length; j++) {//Objecto[key].length Cuenta la cantidad de asteroides por dia
           console.log("Asteroide peligroso: "+objeto[key][j].name)
       }
     }
-
-    //for (var i = 0; i < arrayOfDates.length; i++) {
-      //console.log(arrayOfDates)
-    //
-  //}
-    //console.log(Object.keys(json.near_earth_objects)[0])
-    //console.log(json3);
   })
 }
 asteroidePeligroso()
 
+// Ultimo ejercicio :)
+
+function listaPokemonesFirstGen(){
+  peticion="https://pokeapi.co/api/v2/generation/1/"
+  request.get(peticion,(err,res,body)=>{
+    const json4=JSON.parse(body)
+    pokeObjeto={}
+    var keys
+    for (var i = 0; i < Object.keys(json4).length; i++) {
+      if (Object.keys(json4)[i]=="pokemon_species") {
+        keys=Object.keys(json4)[i]
+        //pokeObjeto[keys]=json4[i]
+        console.log(keys)
+      }
+    }
+  })
+}
+
+listaPokemonesFirstGen()
 /*
 const request=require('request')
 const api_url='https://goodreads-devf-aaron.herokuapp.com/api/v1/authors/'
